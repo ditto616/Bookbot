@@ -10,3 +10,10 @@ def character_count(book):
         else:
             char_dict[char] = 1
     return char_dict
+def dict_sort(book):
+    letter_list = []
+    for letter,count in book.items():
+        if letter.isalpha():
+            letter_list.append({"Letter":letter,"Count":count})
+    letter_list.sort(reverse=True, key=lambda dict: dict["Count"])
+    return letter_list
